@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RoemischeZahlen", "RoemischeZahlen\RoemischeZahlen.vcxproj", "{7DADD59D-E78D-415C-AECC-46749A8E8DAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DADD59D-E78D-415C-AECC-46749A8E8DAD}.Debug|x64.ActiveCfg = Debug|x64
+		{7DADD59D-E78D-415C-AECC-46749A8E8DAD}.Debug|x64.Build.0 = Debug|x64
+		{7DADD59D-E78D-415C-AECC-46749A8E8DAD}.Debug|x86.ActiveCfg = Debug|Win32
+		{7DADD59D-E78D-415C-AECC-46749A8E8DAD}.Debug|x86.Build.0 = Debug|Win32
+		{7DADD59D-E78D-415C-AECC-46749A8E8DAD}.Release|x64.ActiveCfg = Release|x64
+		{7DADD59D-E78D-415C-AECC-46749A8E8DAD}.Release|x64.Build.0 = Release|x64
+		{7DADD59D-E78D-415C-AECC-46749A8E8DAD}.Release|x86.ActiveCfg = Release|Win32
+		{7DADD59D-E78D-415C-AECC-46749A8E8DAD}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8A3E57E-69F6-406E-964F-A853EB36F9CD}
+	EndGlobalSection
+EndGlobal
