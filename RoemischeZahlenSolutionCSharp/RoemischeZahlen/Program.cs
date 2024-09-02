@@ -88,6 +88,16 @@
         }
         public static void Main(string[] args)
         {
+            int[] array1 = new int[50];
+            for (int i = 0; i < array1.Length; i++)
+            {
+                array1[i] = i;
+            }
+            for (int i = 0; i < array1.Length; i++)
+            {
+                if (array1[i] == 49)
+                    System.Console.WriteLine("gefunden");
+            }
 
             int n = 756;
             float pi = 3.14f;
