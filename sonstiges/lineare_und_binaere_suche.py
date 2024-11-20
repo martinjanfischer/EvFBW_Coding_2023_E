@@ -9,14 +9,15 @@ import random
 def lineare_suche(zahlenarray, suchzahl):
 	array_laenge = len(zahlenarray)
 	# Durchlaufe das Array
+	schritt = 0
 	for schritt in range(array_laenge):
 		# Vergleiche das aktuelle Array-Element mit der Suchzahl
 		if zahlenarray[schritt] == suchzahl:
 			# Gefunden
-			return schritt
+			return True, schritt+1
 
 	# Die zu suchende Zahl wurde nicht im Array gefunden
-	return -1
+	return False, schritt+1
 
 
 def binaere_suche(sortiertes_zahlenarray, suchzahl):
@@ -31,20 +32,20 @@ def binaere_suche(sortiertes_zahlenarray, suchzahl):
 	while schritt < array_laenge and start != mitte and mitte != ende:
 		# Berechne den Index der Mitte
 		mitte = int((start + ende) / 2)
+		schritt += 1
 		
 		# Vergleiche das aktuelle Array-Element mit der Suchzahl
 		if sortiertes_zahlenarray[mitte] == suchzahl:
 			# Gefunden
-			return schritt
+			return True, schritt
 		elif sortiertes_zahlenarray[mitte] < suchzahl:
 			# Suche rechts
 			start = mitte + 1
 		else:
 			# Suche links
 			ende = mitte - 1
-		schritt += 1
 	
-	return -1
+	return False, schritt
 
 
 if __name__ == '__main__':
@@ -59,9 +60,9 @@ if __name__ == '__main__':
 	suchzahl = random.randint(0, zahlen)
 	print('Lineare Suche nach der Zahl ' + str(suchzahl))
 	zeit_start = perf_counter()
-	anzahl_schritte = lineare_suche(zahlenarray, suchzahl)
-	if anzahl_schritte!= -1:
-		print(suchzahl, 'wurde gefunden in ' + str(anzahl_schritte) + ' Schritten')
+	ergebnis = lineare_suche(zahlenarray, suchzahl)
+	if ergebnis[0]==True:
+		print(suchzahl, 'wurde gefunden nach ' + str(ergebnis[1]) + ' Schritten')
 	else:
 		print(suchzahl, 'wurde nicht gefunden')
 	zeit_stop = perf_counter()
@@ -71,11 +72,11 @@ if __name__ == '__main__':
 	suchzahl = zahlen
 	print('Lineare Suche nach der Zahl ' + str(suchzahl))
 	zeit_start = perf_counter()
-	anzahl_schritte = lineare_suche(zahlenarray, suchzahl)
-	if anzahl_schritte!= -1:
-		print(suchzahl, 'wurde gefunden in ' + str(anzahl_schritte) + ' Schritten')
+	ergebnis = lineare_suche(zahlenarray, suchzahl)
+	if ergebnis[0]==True:
+		print(suchzahl, 'wurde gefunden nach ' + str(ergebnis[1]) + ' Schritten')
 	else:
-		print(suchzahl, 'wurde nicht gefunden')
+		print(suchzahl, 'wurde nicht gefunden nach ' + str(ergebnis[1]) + ' Schritten')
 	zeit_stop = perf_counter()
 	print('Stoppuhr: ' + str(zeit_stop - zeit_start))
 	print()
@@ -91,11 +92,11 @@ if __name__ == '__main__':
 	suchzahl = random.randint(0, zahlen)
 	print('Binäre Suche nach der Zahl ' + str(suchzahl))
 	zeit_start = perf_counter()
-	anzahl_schritte = binaere_suche(zahlenarray, suchzahl)
-	if anzahl_schritte!= -1:
-		print(suchzahl, 'wurde gefunden in ' + str(anzahl_schritte) + ' Schritten')
+	ergebnis = binaere_suche(zahlenarray, suchzahl)
+	if ergebnis[0]==True:
+		print(suchzahl, 'wurde gefunden nach ' + str(ergebnis[1]) + ' Schritten')
 	else:
-		print(suchzahl, 'wurde nicht gefunden')
+		print(suchzahl, 'wurde nicht gefunden nach ' + str(ergebnis[1]) + ' Schritten')
 	zeit_stop = perf_counter()
 	print('Stoppuhr: ' + str(zeit_stop - zeit_start))
 	print()
@@ -103,11 +104,11 @@ if __name__ == '__main__':
 	suchzahl = zahlen
 	print('Binäre Suche nach der Zahl ' + str(suchzahl))
 	zeit_start = perf_counter()
-	anzahl_schritte = binaere_suche(zahlenarray, suchzahl)
-	if anzahl_schritte!= -1:
-		print(suchzahl, 'wurde gefunden in ' + str(anzahl_schritte) + ' Schritten')
+	ergebnis = binaere_suche(zahlenarray, suchzahl)
+	if ergebnis[0]==True:
+		print(suchzahl, 'wurde gefunden nach ' + str(ergebnis[1]) + ' Schritten')
 	else:
-		print(suchzahl, 'wurde nicht gefunden')
+		print(suchzahl, 'wurde nicht gefunden nach ' + str(ergebnis[1]) + ' Schritten')
 	zeit_stop = perf_counter()
 	print('Stoppuhr: ' + str(zeit_stop - zeit_start))
 	print()
