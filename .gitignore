@@ -35,7 +35,6 @@ ExportedObj/
 *.unityproj
 *.suo
 *.tmp
-*.user
 *.userprefs
 *.pidb
 *.booproj
@@ -68,11 +67,11 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-/AlgorithmenDatenstrukturenCpp/RS_CH2_GCD/x64/Debug/*.recipe
-/AlgorithmenDatenstrukturenCpp/RS_CH2_GCD/x64/Debug/*.ilk
-/AlgorithmenDatenstrukturenCpp/RS_CH2_GCD/x64/Debug/*.log
-/AlgorithmenDatenstrukturenCpp/RS_CH2_GCD/x64/Debug/*.obj
-/AlgorithmenDatenstrukturenCpp/RS_CH2_GCD/x64/Debug/RS_CH2_GCD.tlog/*.tlog
-/AlgorithmenDatenstrukturenCpp/RS_CH2_GCD/x64/Debug/RS_CH2_GCD.tlog/*.lastbuildstate
-/AlgorithmenDatenstrukturenCpp/RS_CH2_GCD/x64/Debug/*.idb
-/AlgorithmenDatenstrukturenCpp/x64/Debug/*.exe
+*.lastbuildstate
+*.exe
+*.recipe
+*.ilk
+*.log
+*.obj
+*.tlog
+*.idb
