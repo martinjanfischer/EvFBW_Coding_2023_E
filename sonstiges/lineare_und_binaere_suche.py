@@ -3,8 +3,21 @@
 # Algorithmen
 #  Lineare und Binäre Suche https://geekflare.com/de/python-search-algorithms/
 
+import os
+import math
 from time import perf_counter
 import random
+
+class bcolors:
+	HEADER = '\033[95m'
+	OKBLUE = '\033[94m'
+	OKCYAN = '\033[96m'
+	OKGREEN = '\033[92m'
+	WARNING = '\033[93m'
+	FAIL = '\033[91m'
+	ENDC = '\033[0m'
+	BOLD = '\033[1m'
+	UNDERLINE = '\033[4m'
 
 def lineare_suche(zahlenarray, suchzahl):
 	array_laenge = len(zahlenarray)
@@ -49,22 +62,24 @@ def binaere_suche(sortiertes_zahlenarray, suchzahl):
 
 
 if __name__ == '__main__':
-	zahlen = 100
+	os.system('cls' if os.name == 'nt' else 'clear')
+	
+	zahlen = 128
 	print('Erzeuge ein grosses unsortiertes Array mit ' + str(zahlen) + ' Zahlen')
 	zahlenarray = random.sample(range(zahlen), zahlen)
-	if zahlen <= 100:
+	if zahlen <= 128:
 		print(zahlenarray)
 	print()
 	
 	# Lineare Suche
-	suchzahl = random.randint(0, zahlen)
+	suchzahl = random.randint(0, zahlen-1)
 	print('Lineare Suche nach der Zahl ' + str(suchzahl))
 	zeit_start = perf_counter()
 	ergebnis = lineare_suche(zahlenarray, suchzahl)
 	if ergebnis[0]==True:
-		print(suchzahl, 'wurde gefunden nach ' + str(ergebnis[1]) + ' Schritten')
+		print(suchzahl, f'wurde {bcolors.OKGREEN}gefunden{bcolors.ENDC} nach {bcolors.BOLD}' + str(ergebnis[1]) + f'{bcolors.ENDC} Schritten')
 	else:
-		print(suchzahl, 'wurde nicht gefunden')
+		print(suchzahl, f'wurde {bcolors.FAIL}nicht gefunden{bcolors.ENDC} nach {bcolors.BOLD}' + str(ergebnis[1]) + f'{bcolors.ENDC} Schritten')
 	zeit_stop = perf_counter()
 	print('Stoppuhr: ' + str(zeit_stop - zeit_start))
 	print()
@@ -74,29 +89,29 @@ if __name__ == '__main__':
 	zeit_start = perf_counter()
 	ergebnis = lineare_suche(zahlenarray, suchzahl)
 	if ergebnis[0]==True:
-		print(suchzahl, 'wurde gefunden nach ' + str(ergebnis[1]) + ' Schritten')
+		print(suchzahl, f'wurde {bcolors.OKGREEN}gefunden{bcolors.ENDC} nach {bcolors.BOLD}' + str(ergebnis[1]) + f'{bcolors.ENDC} Schritten')
 	else:
-		print(suchzahl, 'wurde nicht gefunden nach ' + str(ergebnis[1]) + ' Schritten')
+		print(suchzahl, f'wurde {bcolors.FAIL}nicht gefunden{bcolors.ENDC} nach {bcolors.BOLD}' + str(ergebnis[1]) + f'{bcolors.ENDC} Schritten')
 	zeit_stop = perf_counter()
 	print('Stoppuhr: ' + str(zeit_stop - zeit_start))
 	print()
 	
 	# Binaere Suche
-	print('Sortiere das Array mit Zahlen')
+	print('Sortiere das Array nach aufsteigenden Zahlen')
 	sortiertes_zahlenarray = zahlenarray
 	sortiertes_zahlenarray.sort()
-	if zahlen <= 100:
+	if zahlen <= 128:
 		print(sortiertes_zahlenarray)
 	print()
 	
-	suchzahl = random.randint(0, zahlen)
+	suchzahl = random.randint(0, zahlen-1)
 	print('Binäre Suche nach der Zahl ' + str(suchzahl))
 	zeit_start = perf_counter()
 	ergebnis = binaere_suche(zahlenarray, suchzahl)
 	if ergebnis[0]==True:
-		print(suchzahl, 'wurde gefunden nach ' + str(ergebnis[1]) + ' Schritten')
+		print(suchzahl, f'wurde {bcolors.OKGREEN}gefunden{bcolors.ENDC} nach {bcolors.BOLD}' + str(ergebnis[1]) + f'{bcolors.ENDC} Schritten')
 	else:
-		print(suchzahl, 'wurde nicht gefunden nach ' + str(ergebnis[1]) + ' Schritten')
+		print(suchzahl, f'wurde {bcolors.FAIL}nicht gefunden{bcolors.ENDC} nach {bcolors.BOLD}' + str(ergebnis[1]) + f'{bcolors.ENDC} Schritten')
 	zeit_stop = perf_counter()
 	print('Stoppuhr: ' + str(zeit_stop - zeit_start))
 	print()
@@ -106,11 +121,18 @@ if __name__ == '__main__':
 	zeit_start = perf_counter()
 	ergebnis = binaere_suche(zahlenarray, suchzahl)
 	if ergebnis[0]==True:
-		print(suchzahl, 'wurde gefunden nach ' + str(ergebnis[1]) + ' Schritten')
+		print(suchzahl, f'wurde {bcolors.OKGREEN}gefunden{bcolors.ENDC} nach {bcolors.BOLD}' + str(ergebnis[1]) + f'{bcolors.ENDC} Schritten')
 	else:
-		print(suchzahl, 'wurde nicht gefunden nach ' + str(ergebnis[1]) + ' Schritten')
+		print(suchzahl, f'wurde {bcolors.FAIL}nicht gefunden{bcolors.ENDC} nach {bcolors.BOLD}' + str(ergebnis[1]) + f'{bcolors.ENDC} Schritten')
 	zeit_stop = perf_counter()
 	print('Stoppuhr: ' + str(zeit_stop - zeit_start))
 	print()
 	
 	print('Loesche das Array mit Zahlen')
+	print()
+	
+	print(2**7, 'ist die Zweierpotenz 2**7 also 2 hoch 7')
+	print()
+	print('Die Hochzahl (also der Exponent)', int(math.log(128,2)), 'zur Basis 2')
+	print('lässt sich durch die Logarithmus Funktion math.log(128,2)')
+	print('aus dem Wert 128 zur Basis 2 bestimmen')
