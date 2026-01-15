@@ -13,7 +13,7 @@ class roemische_zahl_test(unittest.TestCase):   # Definiere die Test Klasse "roe
         self.assertEqual(r1.arabische_zahl, 0)
         self.assertEqual(r1.roemische_zahl, '')
         r2 = RoemischeZahl(-1)
-        self.assertEqual(r2.arabische_zahl, 0)
+        self.assertEqual(r2.arabische_zahl, -1)
         self.assertEqual(r2.roemische_zahl, '')
     
     def teste_roemische_zahl_addition(self):

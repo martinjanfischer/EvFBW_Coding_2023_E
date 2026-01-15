@@ -1,5 +1,8 @@
 def berechne_roemische_zahl(arabische_zahl):
     roemische_zahl=""
+    
+    schranke = 3 * 1000 + 1 * 900 + 1 * 90 + 1 * 9
+    ist_arabische_zahl_korrekt = (arabische_zahl >= 0 and arabische_zahl <= schranke)
 
     while arabische_zahl>=1000:
         arabische_zahl -= 1000
@@ -53,7 +56,7 @@ def berechne_roemische_zahl(arabische_zahl):
         arabische_zahl -= 1
         roemische_zahl += "I"
 
-    return roemische_zahl
+    return roemische_zahl, ist_arabische_zahl_korrekt
 
 
 # Definiere Klasse "RoemischeZahl"
@@ -67,10 +70,8 @@ class RoemischeZahl:
     #  r = RoemischeZahl(7)
     #  r.roemische_zahl == 'VII'
     def __init__(self, arabische_zahl):
-        if arabische_zahl < 0:
-            arabische_zahl = 0
         self.arabische_zahl = arabische_zahl
-        self.roemische_zahl = berechne_roemische_zahl(arabische_zahl)
+        self.roemische_zahl, self.erfolg = berechne_roemische_zahl(arabische_zahl)
     
     # Wir können zwei RoemischeZahl Objekte addieren, z.B.
     #  r_links = RoemischeZahl(7)
@@ -110,7 +111,12 @@ class RoemischeZahl:
     
     # Wir können ein RoemischeZahl Objekt auf der Kommandozeile ausgeben
     def ausgabe(self):
-        print(self.roemische_zahl)
+        if self.erfolg:
+            print(self.roemische_zahl)
+        else:
+            print('Fehler:')
+            print('Arabische Zahl ' + str(self.arabische_zahl) + ' ist unpassend.')
+            print('Römische Zahl ' + self.roemische_zahl + ' inkorrekt.')
 
 
 if __name__ == '__main__':      # Definiere die __main__ Funktion
@@ -126,5 +132,10 @@ if __name__ == '__main__':      # Definiere die __main__ Funktion
         roemische_zahl = RoemischeZahl(args.arabische_zahl)
         roemische_zahl.ausgabe()
     else:
-        roemische_zahl = berechne_roemische_zahl(args.arabische_zahl)
-        print(roemische_zahl)
+        roemische_zahl, erfolg = berechne_roemische_zahl(args.arabische_zahl)
+        if erfolg:
+            print(roemische_zahl)
+        else:
+            print('Fehler:')
+            print('Arabische Zahl ' + str(args.arabische_zahl) + ' ist unpassend.')
+            print('Römische Zahl ' + roemische_zahl + ' inkorrekt.')
