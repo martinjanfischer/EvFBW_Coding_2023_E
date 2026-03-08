@@ -75,3 +75,5 @@ crashlytics-build.properties
 *.obj
 *.tlog
 *.idb
+/RoemischeZahlenSolutionCSharp/RoemischeZahlen/bin
+/RoemischeZahlenSolutionCSharp/RoemischeZahlen/obj
