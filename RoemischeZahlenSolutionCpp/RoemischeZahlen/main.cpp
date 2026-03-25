@@ -4,7 +4,8 @@
 
 int main(int Argc, char* argv[])
 {
-	std::cout << "Berechene Römische Zahl aus einer arabischen zahl" << std::endl;
+	std::cout << "Berechene Roemische Zahl aus einer arabischen zahl" << std::endl;
+
 	if (Argc > 1)
 	{
 		std::stringstream sargument1{ argv[1] };
@@ -12,10 +13,20 @@ int main(int Argc, char* argv[])
 		sargument1 >> arabische_zahl;
 		if (!sargument1.fail())
 		{
-			RoemischeZahl roemische_zahl(arabische_zahl);
-			std::cout << roemische_zahl.meineArabischeZahl << std::endl;
-			std::cout << roemische_zahl.meineRoemischeZahl << std::endl;
+			RoemischeZahl r(arabische_zahl);
+			r.print();
 		}
 	}
+	else
+	{
+		RoemischeZahl r2(2);			// II
+		r2.print();
+		RoemischeZahl r3(3);			// III
+		r3.print();
+		RoemischeZahl rsumme = r2 + r3;	// II + III == V ?
+		rsumme.print();
+
+	}
+
 	return 0;
 }

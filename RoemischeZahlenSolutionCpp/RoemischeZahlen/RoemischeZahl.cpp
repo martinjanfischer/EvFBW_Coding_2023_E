@@ -1,4 +1,5 @@
 #include "RoemischeZahl.h"
+#include <iostream>
 
 std::string BerechneRoemischezahl(int arabische_zahl)
 {
@@ -79,4 +80,23 @@ std::string BerechneRoemischezahl(int arabische_zahl)
 
     return Roemischezahl;
 
+}
+
+RoemischeZahl::RoemischeZahl(int arabische_zahl)
+    : meineArabischeZahl(arabische_zahl)
+{
+    meineRoemischeZahl = BerechneRoemischezahl(arabische_zahl);
+}
+
+void RoemischeZahl::print() const
+{
+    std::cout << meineArabischeZahl << std::endl;
+    std::cout << meineRoemischeZahl << std::endl;
+}
+
+RoemischeZahl RoemischeZahl::operator+ (const RoemischeZahl& rechts)
+{
+    const RoemischeZahl& links = *this;
+    int summe = links.meineArabischeZahl + rechts.meineArabischeZahl;
+    return RoemischeZahl(summe);
 }
