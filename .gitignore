@@ -77,3 +77,9 @@ crashlytics-build.properties
 *.idb
 /RoemischeZahlenSolutionCSharp/RoemischeZahlen/bin
 /RoemischeZahlenSolutionCSharp/RoemischeZahlen/obj
+/roemische_zahl_python/.idea/inspectionProfiles/profiles_settings.xml
+/roemische_zahl_python/.idea/misc.xml
+/roemische_zahl_python/.idea/modules.xml
+/roemische_zahl_python/.idea/roemische_zahl_python.iml
+/roemische_zahl_python/.idea/workspace.xml
+/RoemischeZahlenSolutionCpp/RoemischeZahlen/x64/Debug
